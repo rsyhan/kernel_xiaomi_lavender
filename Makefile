@@ -653,6 +653,7 @@ else
 KBUILD_CFLAGS   += -O3
 ifeq ($(cc-name),clang)
 KBUILD_CFLAGS	+= -mcpu=kryo -mtune=kryo
+KBUILD_AFLAGS   += -mcpu=kryo -mtune=kryo
 endif
 endif
 
