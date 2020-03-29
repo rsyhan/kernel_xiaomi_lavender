@@ -11,6 +11,4 @@ args="-j8 O=out \
 	CROSS_COMPILE_ARM32=/home/ratoriku/kernel/cbl/bin/arm-linux-gnueabi- "
 
 make $args lavender-perf_defconfig
-make $args
-
-
+time make $args
