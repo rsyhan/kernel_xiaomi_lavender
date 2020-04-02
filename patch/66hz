@@ -1,0 +1,39 @@
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
+index e8b8c7aedfb6..24380eb2f13f 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
+@@ -16,7 +16,7 @@
+ 		qcom,mdss-dsi-panel-name = "boe td4320 fhdplus video mode dsi panel";
+ 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
+ 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+-		qcom,mdss-dsi-panel-framerate = <60>;
++		qcom,mdss-dsi-panel-framerate = <66>;
+ 		qcom,mdss-dsi-virtual-channel-id = <0>;
+ 		qcom,mdss-dsi-stream = <0>;
+ 		qcom,mdss-dsi-panel-width = <1080>;
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
+index 641704956a3b..47d9f534b0d6 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
+@@ -16,7 +16,7 @@
+ 		qcom,mdss-dsi-panel-name = "shenchao nt36672a fhdplus video mode dsi panel";
+ 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
+ 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+-		qcom,mdss-dsi-panel-framerate = <60>;
++		qcom,mdss-dsi-panel-framerate = <66>;
+ 		qcom,mdss-dsi-virtual-channel-id = <0>;
+ 		qcom,mdss-dsi-stream = <0>;
+ 		qcom,mdss-dsi-panel-width = <1080>;
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
+index a86be555a91a..f5a76193382f 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
+@@ -16,7 +16,7 @@
+ 		qcom,mdss-dsi-panel-name = "tianma nt36672a fhdplus video mode dsi panel";
+ 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
+ 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+-		qcom,mdss-dsi-panel-framerate = <60>;
++		qcom,mdss-dsi-panel-framerate = <66>;
+ 		qcom,mdss-dsi-virtual-channel-id = <0>;
+ 		qcom,mdss-dsi-stream = <0>;
+ 		qcom,mdss-dsi-panel-width = <1080>;
