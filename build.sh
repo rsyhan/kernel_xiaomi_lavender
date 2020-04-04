@@ -8,7 +8,12 @@ args="-j8 O=out \
 	CLANG_TRIPLE=aarch64-linux-gnu- \
 	CC=/home/ratoriku/kernel/cbl/bin/clang \
 	CROSS_COMPILE=/home/ratoriku/kernel/cbl/bin/aarch64-linux-gnu- \
-	CROSS_COMPILE_ARM32=/home/ratoriku/kernel/cbl/bin/arm-linux-gnueabi- "
+	CROSS_COMPILE_ARM32=/home/ratoriku/kernel/cbl/bin/arm-linux-gnueabi- \
+	AR=/home/ratoriku/kernel/cbl/bin/llvm-ar \
+	NM=/home/ratoriku/kernel/cbl/bin/llvm-nm \
+	OBJCOPY=/home/ratoriku/kernel/cbl/bin/llvm-objcopy \
+	OBJDUMP=/home/ratoriku/kernel/cbl/bin/llvm-objdump \
+	STRIP=/home/ratoriku/kernel/cbl/bin/llvm-strip "
 
 make $args lavender-perf_defconfig
 time make $args
