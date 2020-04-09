@@ -7,7 +7,6 @@ apt-get --no-install-recommends install libc6 libstdc++6 -y
 cd $HOME
 git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
 cd AnyKernel3
-rm -rf .git Makefile .gitignore README.md
 cd $HOME
 CBL="LiuNian_clang-20200402-1.tar.zst"
 wget https://dl.akr-developers.com/s/CBL/${CBL}
