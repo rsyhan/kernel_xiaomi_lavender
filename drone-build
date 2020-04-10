@@ -60,9 +60,10 @@ build_oldcam(){
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
     print "Error while building for oldcam!" red
-    fi
+    else
     export zipname="Barairo-Kernel-OLDCAM-$date.zip"
 	mkzip
+	fi
 }
 
 build_newcam(){
@@ -71,10 +72,11 @@ build_newcam(){
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
     print "Error while building newcam!" red
-    fi
+    else
     git reset --hard
     export zipname="Barairo-Kernel-NEWCAM-$date.zip"
 	mkzip
+	fi
 }
 
 build_oldcam_uv(){
@@ -83,10 +85,11 @@ build_oldcam_uv(){
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
     print "Error while building oldcam uv!" red
-    fi
+    else
     git reset --hard
     export zipname="Barairo-Kernel-OLDCAM-UV-$date.zip"
 	mkzip
+	fi
 }
 
 build_newcam_uv(){
@@ -95,10 +98,11 @@ build_newcam_uv(){
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
     print "Error while building oldcam uv!" red
-    fi
+    else
     git reset --hard
     export zipname="Barairo-Kernel-NEWCAM-UV-$date.zip"
 	mkzip
+	fi
 }
 
 mkzip(){
