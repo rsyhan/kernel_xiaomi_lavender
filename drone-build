@@ -93,7 +93,7 @@ build_oldcam_uv(){
 }
 
 build_newcam_uv(){
-	print "Building OLDCAM UV..." blue
+	print "Building NEWCAM UV..." blue
 	git apply patch/newcam && git apply patch/uv
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
@@ -101,6 +101,32 @@ build_newcam_uv(){
     else
     git reset --hard
     export zipname="Barairo-Kernel-NEWCAM-UV-$date.zip"
+	mkzip
+	fi
+}
+
+build_oldcam_66hz(){
+	print "Building OLDCAM 66Hz..." blue
+	git apply patch/66hz
+	make $args lavender-perf_defconfig && make $args
+	if [ $? -ne 0 ]; then
+    print "Error while building oldcam 66Hz!" red
+    else
+    git reset --hard
+    export zipname="Barairo-Kernel-OLDCAM-66HZ-$date.zip"
+	mkzip
+	fi
+}
+
+build_newcam_66hz(){
+	print "Building NEWCAM 66Hz..." blue
+	git apply patch/66hz && git apply patch/newcam
+	make $args lavender-perf_defconfig && make $args
+	if [ $? -ne 0 ]; then
+    print "Error while building newcam 66Hz!" red
+    else
+    git reset --hard
+    export zipname="Barairo-Kernel-NEWCAM-66HZ-$date.zip"
 	mkzip
 	fi
 }
@@ -135,11 +161,17 @@ EOF
 
 	clean
 	build_newcam
-	
+
 	clean
 	build_oldcam_uv
-	
+
 	clean
 	build_newcam_uv
-	
+
+	clean
+	build_oldcam_66hz
+
+	clean
+	build_newcam_66hz
+
 	sftp_upload
