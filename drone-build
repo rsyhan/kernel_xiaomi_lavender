@@ -8,9 +8,6 @@ START=$(date +"%s")
 
 date="`date +"%m%d-%H%M"`"
 
-args="-j$(nproc --all) O=out \
-	ARCH=arm64 "
-
 print (){
 case ${2} in
 	"red")
@@ -37,7 +34,7 @@ case ${2} in
 	esac
 }
 
-args+="CC=$clang_path \
+args="CC=$clang_path \
 	CLANG_TRIPLE=aarch64-linux-gnu- \
 	CROSS_COMPILE=$gcc_path \
 	AR=${HOME}/cbl/bin/llvm-ar \
@@ -45,11 +42,14 @@ args+="CC=$clang_path \
 	OBJCOPY=${HOME}/cbl/bin/llvm-objcopy \
 	OBJDUMP=${HOME}/cbl/bin/llvm-objdump \
 	STRIP=${HOME}/cbl/bin/llvm-strip \
-	CROSS_COMPILE_ARM32=$gcc_32_path "
+	CROSS_COMPILE_ARM32=$gcc_32_path
+	O=out
+	-j$(nproc --all) "
 
 clean(){
 	make mrproper
 	make $args mrproper
+	rm -rf out
 }
 
 export KBUILD_BUILD_USER="lavender"

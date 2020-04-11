@@ -8,8 +8,5 @@ cd $HOME
 git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
 cd AnyKernel3
 cd $HOME
-CBL="LiuNian_clang-20200402-1.tar.zst"
-wget https://dl.akr-developers.com/s/CBL/${CBL}
-mkdir cbl
-tar -I zstd -xvf ${CBL} -C cbl
+git clone --depth=1 https://github.com/NoobLiROM/cbl.git
 cd $HOME
