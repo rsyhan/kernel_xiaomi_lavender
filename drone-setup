@@ -8,5 +8,5 @@ cd $HOME
 git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
 cd AnyKernel3
 cd $HOME
-git clone --depth=1 https://github.com/NoobLiROM/cbl.git
+git clone --depth=1 https://github.com/Ratoriku/LiuNian_Clang.git
 cd $HOME
