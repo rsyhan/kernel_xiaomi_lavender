@@ -37,9 +37,8 @@ case ${2} in
 args="CC=$clang_path \
 	CLANG_TRIPLE=aarch64-linux-gnu- \
 	CROSS_COMPILE=$gcc_path \
-	LLVM_AR=${HOME}/cbl/bin/llvm-ar \
-	LLVM_NM=${HOME}/cbl/bin/llvm-nm \
-	LD=${HOME}/cbl/bin/ld.lld \
+	AR=${HOME}/cbl/bin/llvm-ar \
+	NM=${HOME}/cbl/bin/llvm-nm \
 	OBJCOPY=${HOME}/cbl/bin/llvm-objcopy \
 	OBJDUMP=${HOME}/cbl/bin/llvm-objdump \
 	STRIP=${HOME}/cbl/bin/llvm-strip \
