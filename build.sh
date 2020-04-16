@@ -11,6 +11,7 @@ args="-j8 O=out \
 	CROSS_COMPILE_ARM32=/home/ratoriku/kernel/cbl/bin/arm-linux-gnueabi- \
 	AR=/home/ratoriku/kernel/cbl/bin/llvm-ar \
 	NM=/home/ratoriku/kernel/cbl/bin/llvm-nm \
+	LDLLD=/home/ratoriku/kernel/cbl/bin/ld.lld \
 	OBJCOPY=/home/ratoriku/kernel/cbl/bin/llvm-objcopy \
 	OBJDUMP=/home/ratoriku/kernel/cbl/bin/llvm-objdump \
 	STRIP=/home/ratoriku/kernel/cbl/bin/llvm-strip "
