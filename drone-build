@@ -3,6 +3,8 @@ clang_path="${HOME}/cbl/bin/clang"
 gcc_path="${HOME}/cbl/bin/aarch64-linux-gnu-"
 gcc_32_path="${HOME}/cbl/bin/arm-linux-gnueabi-"
 
+version=R3.0
+
 source=`pwd`
 START=$(date +"%s")
 
@@ -61,7 +63,7 @@ build_oldcam(){
 	if [ $? -ne 0 ]; then
     print "Error while building for oldcam!" red
     else
-    export zipname="Barairo-Kernel-OLDCAM-$date.zip"
+    export zipname="Barairo-Kernel-$version-OLDCAM-$date.zip"
 	mkzip
 	fi
 }
@@ -74,7 +76,7 @@ build_newcam(){
     print "Error while building newcam!" red
     else
     git reset --hard
-    export zipname="Barairo-Kernel-NEWCAM-$date.zip"
+    export zipname="Barairo-Kernel-$version-NEWCAM-$date.zip"
 	mkzip
 	fi
 }
@@ -87,7 +89,7 @@ build_oldcam_uv(){
     print "Error while building oldcam uv!" red
     else
     git reset --hard
-    export zipname="Barairo-Kernel-OLDCAM-UV-$date.zip"
+    export zipname="Barairo-Kernel-$version-OLDCAM-UV-$date.zip"
 	mkzip
 	fi
 }
@@ -100,7 +102,7 @@ build_newcam_uv(){
     print "Error while building oldcam uv!" red
     else
     git reset --hard
-    export zipname="Barairo-Kernel-NEWCAM-UV-$date.zip"
+    export zipname="Barairo-Kernel-$version-NEWCAM-UV-$date.zip"
 	mkzip
 	fi
 }
@@ -113,7 +115,7 @@ build_oldcam_66hz(){
     print "Error while building oldcam 66Hz!" red
     else
     git reset --hard
-    export zipname="Barairo-Kernel-OLDCAM-66HZ-$date.zip"
+    export zipname="Barairo-Kernel-$version-OLDCAM-66HZ-$date.zip"
 	mkzip
 	fi
 }
@@ -126,7 +128,7 @@ build_newcam_66hz(){
     print "Error while building newcam 66Hz!" red
     else
     git reset --hard
-    export zipname="Barairo-Kernel-NEWCAM-66HZ-$date.zip"
+    export zipname="Barairo-Kernel-$version-NEWCAM-66HZ-$date.zip"
 	mkzip
 	fi
 }
