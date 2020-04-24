@@ -147,9 +147,9 @@ sftp_upload(){
 cd ${HOME}
 lftp <<EOF
     set sftp:auto-confirm yes
-    open sftp://${sftp_server}
-    user ${sftp_username} ${sftp_pwd}
-    cd /home/frs/project/lc-dev/lavender/Barairo-Kernel
+    open sftp://${akr_server}
+    user ${akr_username} ${akr_pwd}
+    cd upload/xiaomi/lavender/Barairo-Kernel
     mkdir ${date}
     cd ${date}
     mput *.zip
