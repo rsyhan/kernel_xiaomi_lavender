@@ -3,7 +3,7 @@ clang_path="${HOME}/cbl/bin/clang"
 gcc_path="${HOME}/cbl/bin/aarch64-linux-gnu-"
 gcc_32_path="${HOME}/cbl/bin/arm-linux-gnueabi-"
 
-version=R3.2
+version=R3.3
 
 source=`pwd`
 START=$(date +"%s")
@@ -61,7 +61,7 @@ build_oldcam(){
 	print "Building OLDCAM..." blue
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building for oldcam!" red
+    errored "Error while building for oldcam!"
     else
     export zipname="Barairo-Kernel-$version-OLDCAM-$date.zip"
 	mkzip
@@ -73,7 +73,7 @@ build_newcam(){
 	git apply patch/newcam
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building newcam!" red
+    errored "Error while building newcam!"
     else
     git reset --hard
     export zipname="Barairo-Kernel-$version-NEWCAM-$date.zip"
@@ -86,7 +86,7 @@ build_oldcam_uv(){
 	git apply patch/uv
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building oldcam uv!" red
+    errored "Error while building oldcam uv!"
     else
     git reset --hard
     export zipname="Barairo-Kernel-$version-OLDCAM-UV-$date.zip"
@@ -99,7 +99,7 @@ build_newcam_uv(){
 	git apply patch/newcam && git apply patch/uv
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building oldcam uv!" red
+    errored "Error while building oldcam uv!"
     else
     git reset --hard
     export zipname="Barairo-Kernel-$version-NEWCAM-UV-$date.zip"
@@ -112,7 +112,7 @@ build_oldcam_66hz(){
 	git apply patch/66hz
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building oldcam 66Hz!" red
+    errored "Error while building oldcam 66Hz!"
     else
     git reset --hard
     export zipname="Barairo-Kernel-$version-OLDCAM-66HZ-$date.zip"
@@ -125,12 +125,25 @@ build_newcam_66hz(){
 	git apply patch/66hz && git apply patch/newcam
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    print "Error while building newcam 66Hz!" red
+    errored "Error while building newcam 66Hz!"
     else
     git reset --hard
     export zipname="Barairo-Kernel-$version-NEWCAM-66HZ-$date.zip"
 	mkzip
 	fi
+}
+
+function telegram_notify(){
+    curl -s https://api.telegram.org/bot"${bot_token}"/sendMessage -d parse_mode="Markdown" -d text="${1}" -d chat_id="${chat_id}"
+}
+
+function errored(){
+    telegram_notify "${1}"
+    exit 1
+}
+
+function telegram_upload{
+    curl -s https://api.telegram.org/bot"${bot_token}"/sendDocument -F document=@"${1}" -F chat_id="${chat_id}"
 }
 
 mkzip(){
@@ -139,25 +152,14 @@ mkzip(){
 	make
 	mv -f *.zip ~/$zipname
 	cd ${HOME}
+	telegram_upload ${zipname}
 	cd $source
-	print "All done.Find it at ${HOME}/$zipname" green
+	print "Done! Check your $zipname" green
 }
 
-sftp_upload(){
-cd ${HOME}
-lftp <<EOF
-    set sftp:auto-confirm yes
-    open sftp://${akr_server}
-    user ${akr_username} ${akr_pwd}
-    cd upload/xiaomi/lavender/Barairo-Kernel
-    mkdir ${date}
-    cd ${date}
-    mput *.zip
-    bye
-EOF
- 
-    echo "Sftp uploading done!"
 }
+	START=$(date +"%s")
+
 	clean
 	build_oldcam
 
@@ -176,4 +178,6 @@ EOF
 	clean
 	build_newcam_66hz
 
-	sftp_upload
+	END=$(date +"%s")
+	KDURTION=$((END - START))
+	telegram_notify "All Done， Cost time $((KDURTION / 60)) min $((KDURTION % 60)) s"
