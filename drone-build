@@ -142,7 +142,7 @@ function errored(){
     exit 1
 }
 
-function telegram_upload{
+function telegram_upload(){
     curl -s https://api.telegram.org/bot"${bot_token}"/sendDocument -F document=@"${1}" -F chat_id="${chat_id}"
 }
 
@@ -157,7 +157,6 @@ mkzip(){
 	print "Done! Check your $zipname" green
 }
 
-}
 	START=$(date +"%s")
 
 	clean
