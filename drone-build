@@ -3,7 +3,7 @@ clang_path="${HOME}/cbl/bin/clang"
 gcc_path="${HOME}/cbl/bin/aarch64-linux-gnu-"
 gcc_32_path="${HOME}/cbl/bin/arm-linux-gnueabi-"
 
-version=R3.3
+version=R3.4
 
 source=`pwd`
 START=$(date +"%s")
@@ -63,7 +63,7 @@ build_oldcam(){
 	if [ $? -ne 0 ]; then
     errored "Error while building for oldcam!"
     else
-    export zipname="Barairo-Kernel-$version-OLDCAM-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-OLDCAM-$date.zip"
 	mkzip
 	fi
 }
@@ -76,7 +76,7 @@ build_newcam(){
     errored "Error while building newcam!"
     else
     git reset --hard
-    export zipname="Barairo-Kernel-$version-NEWCAM-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-NEWCAM-$date.zip"
 	mkzip
 	fi
 }
@@ -89,7 +89,7 @@ build_oldcam_uv(){
     errored "Error while building oldcam uv!"
     else
     git reset --hard
-    export zipname="Barairo-Kernel-$version-OLDCAM-UV-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-OLDCAM-UV-$date.zip"
 	mkzip
 	fi
 }
@@ -99,10 +99,10 @@ build_newcam_uv(){
 	git apply patch/newcam && git apply patch/uv
 	make $args lavender-perf_defconfig && make $args
 	if [ $? -ne 0 ]; then
-    errored "Error while building oldcam uv!"
+    errored "Error while building newcam uv!"
     else
     git reset --hard
-    export zipname="Barairo-Kernel-$version-NEWCAM-UV-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-NEWCAM-UV-$date.zip"
 	mkzip
 	fi
 }
@@ -115,7 +115,7 @@ build_oldcam_66hz(){
     errored "Error while building oldcam 66Hz!"
     else
     git reset --hard
-    export zipname="Barairo-Kernel-$version-OLDCAM-66HZ-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-OLDCAM-66HZ-$date.zip"
 	mkzip
 	fi
 }
@@ -128,7 +128,7 @@ build_newcam_66hz(){
     errored "Error while building newcam 66Hz!"
     else
     git reset --hard
-    export zipname="Barairo-Kernel-$version-NEWCAM-66HZ-$date.zip"
+    export zipname="PaperMoon-Kernel-$version-NEWCAM-66HZ-$date.zip"
 	mkzip
 	fi
 }
