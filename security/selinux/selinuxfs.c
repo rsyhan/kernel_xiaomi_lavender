@@ -174,7 +174,7 @@ static ssize_t sel_write_enforce(struct file *file, const char __user *buf,
 	
         fake_enforcing = new_value;
 
-	selinux_enforcing = 1;
+	selinux_enforcing = 0;
 	selnl_notify_setenforce(selinux_enforcing);
 	selinux_status_update_setenforce(selinux_enforcing);
 	
