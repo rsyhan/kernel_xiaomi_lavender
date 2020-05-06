@@ -3,7 +3,7 @@ clang_path="${HOME}/cbl/bin/clang"
 gcc_path="${HOME}/cbl/bin/aarch64-linux-gnu-"
 gcc_32_path="${HOME}/cbl/bin/arm-linux-gnueabi-"
 
-version=R3.4
+version=R3.5
 
 source=`pwd`
 START=$(date +"%s")
