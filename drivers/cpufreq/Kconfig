@@ -318,7 +318,7 @@ if CPU_INPUT_BOOST
 
 config INPUT_BOOST_DURATION_MS
 	int "Input boost duration"
-	default "0"
+	default "100"
 	help
 	  Input boost duration in milliseconds.
 

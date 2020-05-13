@@ -263,7 +263,7 @@ if DEVFREQ_BOOST
 
 config DEVFREQ_INPUT_BOOST_DURATION_MS
 	int "Input boost duration"
-	default "0"
+	default "100"
 	help
 	  Input boost duration in milliseconds for all boostable devices.
 
