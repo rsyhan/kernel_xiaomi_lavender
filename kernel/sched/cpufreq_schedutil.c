@@ -16,6 +16,7 @@
 #include <linux/slab.h>
 #include <trace/events/power.h>
 #include <linux/energy_model.h>
+#include <linux/binfmts.h>
 
 #include "sched.h"
 #include "tune.h"
