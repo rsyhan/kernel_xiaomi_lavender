@@ -1,0 +1,45 @@
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
+index f9b26c097d49..4ed0eec14181 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-boe-td4320-1080p-video.dtsi
+@@ -50,8 +50,8 @@
+ 		qcom,mdss-dsi-t-clk-post = <0x0e>;
+ 		qcom,mdss-dsi-t-clk-pre = <0x37>;
+ 		qcom,mdss-dsi-bl-min-level = <1>;
+-		qcom,mdss-dsi-bl-max-level = <4095>;
+-		qcom,mdss-brightness-max-level = <4095>;
++		qcom,mdss-dsi-bl-max-level = <1023>;
++		qcom,mdss-brightness-max-level = <1023>;
+ 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+ 		qcom,mdss-dsi-mdp-trigger = "none";
+ 		qcom,ulps-enabled;
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
+index 9201587a0f11..722537491eb2 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi
+@@ -50,8 +50,8 @@
+ 		qcom,mdss-dsi-t-clk-post = <0x0e>;
+ 		qcom,mdss-dsi-t-clk-pre = <0x37>;
+ 		qcom,mdss-dsi-bl-min-level = <1>;
+-		qcom,mdss-dsi-bl-max-level = <4095>;
+-		qcom,mdss-brightness-max-level = <4095>;
++		qcom,mdss-dsi-bl-max-level = <1023>;
++		qcom,mdss-brightness-max-level = <1023>;
+ 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+ 		qcom,mdss-dsi-mdp-trigger = "none";
+ 		qcom,ulps-enabled;
+diff --git a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
+index 64d377937e3f..1b6c93baf6a5 100644
+--- a/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
++++ b/arch/arm/boot/dts/qcom/lavender/panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi
+@@ -50,8 +50,8 @@
+ 		qcom,mdss-dsi-t-clk-post = <0x0e>;
+ 		qcom,mdss-dsi-t-clk-pre = <0x37>;
+ 		qcom,mdss-dsi-bl-min-level = <1>;
+-		qcom,mdss-dsi-bl-max-level = <4095>;
+-		qcom,mdss-brightness-max-level = <4095>;
++		qcom,mdss-dsi-bl-max-level = <1023>;
++		qcom,mdss-brightness-max-level = <1023>;
+ 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+ 		qcom,mdss-dsi-mdp-trigger = "none";
+ 		qcom,ulps-enabled;
