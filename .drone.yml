@@ -18,5 +18,6 @@ steps:
         from_secret: chat_id
     commands:
       - export HOME=/drone
+      - ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
       - ./drone-setup
       - ./drone-build
