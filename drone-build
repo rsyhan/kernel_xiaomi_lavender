@@ -165,18 +165,6 @@ mkzip(){
 	clean
 	build_newcam
 
-	clean
-	build_oldcam_uv
-
-	clean
-	build_newcam_uv
-
-	clean
-	build_oldcam_66hz
-
-	clean
-	build_newcam_66hz
-
 	END=$(date +"%s")
 	KDURTION=$((END - START))
 	telegram_notify "All Done， Cost time $((KDURTION / 60)) min $((KDURTION % 60)) s"
