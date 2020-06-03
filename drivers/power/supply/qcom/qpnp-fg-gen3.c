@@ -3373,7 +3373,7 @@ static int fg_get_time_to_full_locked(struct fg_chip *chip, int *val)
 
 	/* clamp ibatt_avg to iterm */
 #ifdef CONFIG_FORCE_FAST_CHARGE
-	if ((msoc > 70) && (msoc <= 90)) {
+	if ((msoc > 20) && (msoc <= 80)) {
 		if (ibatt_avg < 1000)
 			ibatt_avg = 1000; /* force consistent minumum charging current 1000mA upto 90% battery */
 	} else {
