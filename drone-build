@@ -157,6 +157,7 @@ mkzip(){
 	print "Done! Check your $zipname" green
 }
 
+	telegram_notify "START BUILDING"
 	START=$(date +"%s")
 
 	clean
@@ -167,4 +168,5 @@ mkzip(){
 
 	END=$(date +"%s")
 	KDURTION=$((END - START))
-	telegram_notify "All Done， Cost time $((KDURTION / 60)) min $((KDURTION % 60)) s"
+	telegram_notify "Done!"
+	telegram_notify "Cost time $((KDURTION / 60)) min $((KDURTION % 60)) s"
