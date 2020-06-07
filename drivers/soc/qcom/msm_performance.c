@@ -27,7 +27,7 @@
 #include <linux/kthread.h>
 #include <linux/sched/sysctl.h>
 
-static const unsigned int max_boost_freq_lp = 1824000;
+static const unsigned int max_boost_freq_lp = 1536000;
 static const unsigned int max_boost_freq_perf = 1958400;
 
 /* To handle cpufreq min/max request */
@@ -76,7 +76,7 @@ static int set_cpu_min_freq(const char *buf, const struct kernel_param *kp)
 			val = min(val, max_boost_freq_perf);
 
 		if (cpu == 7) {
-			if (val >= 2956800) {
+			if (val >= 2208000) {
 				sysctl_sched_energy_aware = 0;
 			} else {
 				sysctl_sched_energy_aware = 1;
